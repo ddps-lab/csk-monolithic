@@ -1,0 +1,58 @@
+{{>header}}
+<div class="container">
+	{{>nav}}
+	<div class="container">
+		<h1>Welcome</h1>
+		<p>Use this app to keep track of your coffee suppliers</p>
+		<p><a href="/suppliers">List of suppliers</a></p>
+	</div>
+	<div class='bottom-layout'>
+        <h2>EC2 Instance Information</h2>
+		<div class="bottom-content-layout">
+			<table>
+				<tr>
+					<th>Type</th>
+					<th>Value</th>
+				</tr>
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>Public IP Address</td>
+					<td>{{ public_ip }}</td>
+				</tr>
+				<tr>
+					<td>Instance ID</td>
+					<td>{{ instance_id }}</td>
+				</tr>
+				<tr>
+					<td>Instance Type</td>
+					<td>{{ instance_type }}</td>
+				</tr>
+				<tr>
+					<td>Avilability Zone</td>
+					<td>{{ avail_zone }}</td>
+				</tr>
+				<tr>
+					<td>Country Name</td>
+					<td>{{ geo_country_name }}</td>
+				</tr>
+				<tr>
+					<td>Region Name</td>
+					<td>{{ geo_region_name }}</td>
+				</tr>
+				</tr>
+				<tr>
+					<td>Timezone</td>
+					<td>{{ geo_timezone }}</td>
+				</tr>
+				<tr>
+					<td>Latitude / Longitude</td>
+					<td>{{ geo_lat_long }}</td>
+				</tr> 
+			</table>
+		</div>
+	</div>
+</div>
+{{>footer}}

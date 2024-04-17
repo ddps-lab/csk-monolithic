@@ -1,0 +1,17 @@
+{{>header}}
+<div class="container">
+    {{>nav}}
+    <div class="mt-2">
+        {{#errors}}
+        <div class="alert alert-warning" role="alert">
+            {{msg}}
+        </div>
+        {{/errors}}
+    </div>
+    <form action="/admin/supplier-add" method="POST">
+        {{>supplier-form-fields}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+{{>footer}}

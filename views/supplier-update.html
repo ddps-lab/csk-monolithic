@@ -1,0 +1,50 @@
+{{>header}}
+<div class="container">
+    {{>nav}}
+    <div class="mt-2">
+        {{#errors}}
+        <div class="alert alert-warning" role="alert">
+            {{msg}}
+        </div>
+        {{/errors}}
+    </div>
+    {{#supplier}}
+    <form action="/admin/supplier-update" method="POST">
+        <input type="hidden" id="id" name="id" value="{{id}}">
+        {{>supplier-form-fields}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="float-right btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+        Delete this supplier
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete supplier</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete supplier {{name}}?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <form action="/admin/supplier-remove/{{id}}" method="POST">
+                        <button type="submit" class="float-right btn btn-danger">Delete this supplier</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{/supplier}}
+
+</div>
+{{>footer}}
